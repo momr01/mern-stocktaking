@@ -13,9 +13,22 @@
         &-content {
             width: 650px;
 
+            &__row {
+                @media screen and (max-width: 650px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            
+
             &-buttons {
                 display: flex;
                 justify-content: space-between;
+
+                &__btn{
+                    width: 8rem;
+                }
+
             }
         }
     }

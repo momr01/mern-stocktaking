@@ -3,12 +3,15 @@ import { Form, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import useAuth from "../../auth/useAuth";
 import { useLocation } from "react-router-dom";
-import axios from 'axios'
-import url from '../../helpers/url'
+import axios from "axios";
+import url from "../../helpers/url";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 import "./FormLogin.scss";
 
 export default function FormLogin(props) {
+  const MySwal = withReactContent(Swal);
   const { setView } = props;
   const { login } = useAuth();
 
@@ -35,16 +38,29 @@ export default function FormLogin(props) {
     e.preventDefault();
 
     if (email.length > 0 && password.length > 0 && checkbox) {
-      const userFound = await axios.get(`${url.backUsers}/${email}`)
+      const userFound = await axios.get(`${url.backUsers}/${email}`);
 
-      console.log(userFound)
-      console.log(formData)
+      console.log(userFound);
+      console.log(formData);
 
-      if(userFound.data!=null) {
-        if(userFound.data.email===email && userFound.data.password===password) {
-          console.log("SUPEEEEEEEEEER")
-          login(userCredentials, location.state?.from, userFound.data);
-          
+      if (userFound.data != null) {
+        if (
+          userFound.data.email === email &&
+          userFound.data.password === password
+        ) {
+          await MySwal.fire({
+            title: <strong>Login exitoso</strong>,
+            html: <i>Redirigir a la página principal?</i>,
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: `OK`,
+          }).then((res) => {
+            if (res.isConfirmed) {
+              login(userCredentials, location.state?.from, userFound.data);
+            }
+          });
+          //login(userCredentials, location.state?.from, userFound.data);
         } else {
           toast.error("Datos erróneos", {
             position: "bottom-left",
@@ -69,9 +85,6 @@ export default function FormLogin(props) {
           theme: "colored",
         });
       }
-
-
-
     } else {
       toast.error("Datos erróneos", {
         position: "bottom-left",

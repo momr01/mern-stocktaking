@@ -126,14 +126,14 @@ export default function EditTool(props) {
   console.log(data)
 
   return (
-    <div className="add-new">
+    <div className="edit">
       <Container>
         
-          <h3 className="add-new__title">Editar equipo</h3>
+          <h3 className="edit__title">Editar equipo</h3>
         
-        <div className="add-new__form">
-          <Form className="add-new__form-content" id="form-add-new">
-            <Row className="mb-3">
+        <div className="edit__form">
+          <Form className="edit__form-content" id="form-add-new">
+            <Row className="mb-3 edit__form-content__row">
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>Instrumento/Equipo</Form.Label>
               
@@ -168,7 +168,7 @@ export default function EditTool(props) {
               </Form.Group>
             </Row>
 
-            <Row className="mb-3">
+            <Row className="mb-3 edit__form-content__row">
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>Modelo</Form.Label>
                 <Form.Select defaultValue={modelo} onChange={(e)=>setModelo(e.target.value)}>
@@ -212,7 +212,7 @@ export default function EditTool(props) {
               <Form.Control type="text" defaultValue={accesorios} onChange={(e)=>setAccesorios(e.target.value)}/>
             </Form.Group>
 
-            <Row className="mb-3">
+            <Row className="mb-3 edit__form-content__row">
               <Form.Group as={Col}>
                 <Form.Label>Estado</Form.Label>
                 <Form.Select defaultValue={estado} onChange={(e)=> setEstado(e.target.value)}>
@@ -235,11 +235,11 @@ export default function EditTool(props) {
               <Form.Check type="checkbox" label="No soy un robot" onChange={(e)=>setCheckbox(e.target.checked)}/>
             </Form.Group>
 
-            <div className="add-new__form-content-buttons">
-            <Button variant="success" type="submit" onClick={(e)=>sendForm(e)}>
+            <div className="edit__form-content-buttons">
+            <Button className="edit__form-content-buttons__btn" variant="success" type="submit" onClick={(e)=>sendForm(e)}>
               Actualizar
             </Button>
-            <Link to={`${routes.list}`} ><Button variant="secondary">
+            <Link to={`${routes.list}`} ><Button className="edit__form-content-buttons__btn" variant="secondary">
               Atrás
             </Button></Link>
             </div>

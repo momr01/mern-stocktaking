@@ -11,7 +11,7 @@ export default function Reports(props) {
   return (
     <div className="reports">
       <h3 className="title">Reportes: service de equipos</h3>
-      <Row>
+      <Row >
         <Col className="main-data" xs={12}>
           {data ? (
             <div>
@@ -37,6 +37,8 @@ export default function Reports(props) {
             <hr />
           </div>
         </Col>
+        </Row>
+        <Row style={{overflow: "scroll"}}>
         {reports ? (
           <Col xs={12}>
             <Table striped bordered hover variant="dark">

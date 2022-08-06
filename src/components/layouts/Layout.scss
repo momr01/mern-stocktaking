@@ -1,4 +1,9 @@
 .layout {
     max-height: calc(100vh - 96px);
     //56  40
+
+    @media screen and (max-width: 650px){
+        max-height: none;
+        padding-bottom: 3rem;
+    }
 }

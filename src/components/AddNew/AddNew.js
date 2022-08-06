@@ -123,7 +123,7 @@ export default function AddNew() {
         
         <div className="add-new__form">
           <Form className="add-new__form-content" id="form-add-new">
-            <Row className="mb-3">
+            <Row className="mb-3 add-new__form-content__row">
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>Instrumento/Equipo</Form.Label>
               
@@ -158,7 +158,7 @@ export default function AddNew() {
               </Form.Group>
             </Row>
 
-            <Row className="mb-3">
+            <Row className="mb-3 add-new__form-content__row">
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>Modelo</Form.Label>
                 <Form.Select defaultValue="Seleccione..." onChange={(e)=>setModelo(e.target.value)}>
@@ -202,7 +202,7 @@ export default function AddNew() {
               <Form.Control type="text" placeholder="Dato obligatorio" onChange={(e)=>setAccesorios(e.target.value)}/>
             </Form.Group>
 
-            <Row className="mb-3">
+            <Row className="mb-3 add-new__form-content__row">
               <Form.Group as={Col}>
                 <Form.Label>Estado</Form.Label>
                 <Form.Select defaultValue="Seleccione..." onChange={(e)=>setEstado(e.target.value)}>
@@ -226,10 +226,10 @@ export default function AddNew() {
             </Form.Group>
 
             <div className="add-new__form-content-buttons">
-            <Button variant="primary" type="submit" onClick={(e)=>sendForm(e)}>
+            <Button className="add-new__form-content-buttons__btn" variant="primary" type="submit" onClick={(e)=>sendForm(e)}>
               Agregar
             </Button>
-            <Link to={`${routes.home}`} ><Button variant="secondary">
+            <Link to={`${routes.home}`} ><Button className="add-new__form-content-buttons__btn" variant="secondary">
               Atrás
             </Button></Link>
             </div>

@@ -1,3 +1,34 @@
-.edit-tool {
-    
+.edit {
+
+    &__title {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        margin-top: 75px;
+
+        &-content {
+            width: 650px;
+            &__row {
+                @media screen and (max-width: 650px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            
+
+            &-buttons {
+                display: flex;
+                justify-content: space-between;
+
+                &__btn{
+                    width: 8rem;
+                }
+
+            }
+        }
+    }
 }
