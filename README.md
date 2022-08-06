@@ -17,6 +17,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#deploy">Deploy</a></li>
+    <li><a href="#images">Images of the project</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -72,18 +74,20 @@ _url.js (frontend)_
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- DEPLOY -->
-## Deploy with Netlify: []()
+## Deploy with Netlify: [https://celadon-douhua-1c4fca.netlify.app/](https://celadon-douhua-1c4fca.netlify.app/)
 
 <!-- IMAGES -->
 ## Images of the project:
 
-![]()
+![Login](https://github.com/momr01/mern-stocktaking/blob/main/public/proyecto-propio/login.PNG)
 * * *
-![]()
+![Main](https://github.com/momr01/mern-stocktaking/blob/main/public/proyecto-propio/main.PNG)
 * * *
-![]()
+![Nuevo](https://github.com/momr01/mern-stocktaking/blob/main/public/proyecto-propio/nuevo.PNG)
 * * *
-![]()
+![Tabla](https://github.com/momr01/mern-stocktaking/blob/main/public/proyecto-propio/tabla.PNG)
+* * *
+![Reportes](https://github.com/momr01/mern-stocktaking/blob/main/public/proyecto-propio/reportes.PNG)
 
 <!-- CONTRIBUTING -->
 ## Contributing
